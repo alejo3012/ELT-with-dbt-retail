@@ -1,0 +1,26 @@
+version: 2
+
+seeds:
+  - name: customers
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+  - name: products
+    columns:
+      - name: product_id
+        tests: [not_null, unique]
+  - name: orders
+    columns:
+      - name: order_id
+        tests: [not_null, unique]
+
+models:
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests: [not_null]
+  - name: fct_sales
+    columns:
+      - name: revenue
+        tests:
+          - not_null
